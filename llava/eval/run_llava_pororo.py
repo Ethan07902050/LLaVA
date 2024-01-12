@@ -166,7 +166,7 @@ def eval_model(args):
             if outputs.endswith(stop_str):
                 outputs = outputs[: -len(stop_str)]
             outputs = outputs.strip()
-            output_prompts[img_id].append(outputs)
+            output_prompts[str(img_id)].append(outputs)
 
     with open(args.output_path, 'w') as f:
         json.dump(output_prompts, f, indent=2)
